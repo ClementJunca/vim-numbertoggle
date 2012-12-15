@@ -18,12 +18,12 @@ function! NumberToggle()
 endfunc
 
 function! UpdateMode()
-    " Compute needed width of the line number column to stay equal in two modes.
-	let &nuw=max([3, 1+strlen(line('$'))])
 	if(g:focus == 0)
 		set number
 	elseif(g:insertmode == 0)
-		set relativenumber
+        " Computes needed width of the line number column to stay equal in two modes.
+        let &nuw=max([3, 1+strlen(line('$'))])
+        set relativenumber
 	else
 		set number
 	end

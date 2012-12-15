@@ -18,6 +18,7 @@ function! NumberToggle()
 endfunc
 
 function! UpdateMode()
+	let &nuw=max([3, 1+strlen(line('$'))])
 	if(g:focus == 0)
 		set number
 	elseif(g:insertmode == 0)
